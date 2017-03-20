@@ -1,0 +1,59 @@
+2017-01-28T01:16:40.015Z INFO Ensure step 2 jar file s3://neu.mr.hw1/jar/wordcount-1.0.jar
+2017-01-28T01:16:53.117Z INFO StepRunner: Created Runner for step 2
+INFO startExec 'hadoop jar /mnt/var/lib/hadoop/steps/s-1F27UY4FJWPCQ/wordcount-1.0.jar s3://neu.mr.hw1/input s3://neu.mr.hw1/output'
+INFO Environment:
+  PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/sbin:/opt/aws/bin
+  LESS_TERMCAP_md=[01;38;5;208m
+  LESS_TERMCAP_me=[0m
+  HISTCONTROL=ignoredups
+  LESS_TERMCAP_mb=[01;31m
+  AWS_AUTO_SCALING_HOME=/opt/aws/apitools/as
+  UPSTART_JOB=rc
+  LESS_TERMCAP_se=[0m
+  HISTSIZE=1000
+  HADOOP_ROOT_LOGGER=INFO,DRFA
+  JAVA_HOME=/etc/alternatives/jre
+  AWS_DEFAULT_REGION=us-east-1
+  AWS_ELB_HOME=/opt/aws/apitools/elb
+  LESS_TERMCAP_us=[04;38;5;111m
+  EC2_HOME=/opt/aws/apitools/ec2
+  TERM=linux
+  XFILESEARCHPATH=/usr/dt/app-defaults/%L/Dt
+  runlevel=3
+  LANG=en_US.UTF-8
+  AWS_CLOUDWATCH_HOME=/opt/aws/apitools/mon
+  MAIL=/var/spool/mail/hadoop
+  LESS_TERMCAP_ue=[0m
+  LOGNAME=hadoop
+  PWD=/
+  LANGSH_SOURCED=1
+  HADOOP_CLIENT_OPTS=-Djava.io.tmpdir=/mnt/var/lib/hadoop/steps/s-1F27UY4FJWPCQ/tmp
+  _=/etc/alternatives/jre/bin/java
+  CONSOLETYPE=serial
+  RUNLEVEL=3
+  LESSOPEN=||/usr/bin/lesspipe.sh %s
+  previous=N
+  UPSTART_EVENTS=runlevel
+  AWS_PATH=/opt/aws
+  USER=hadoop
+  UPSTART_INSTANCE=
+  PREVLEVEL=N
+  HADOOP_LOGFILE=syslog
+  HOSTNAME=ip-172-31-0-196
+  NLSPATH=/usr/dt/lib/nls/msg/%L/%N.cat
+  HADOOP_LOG_DIR=/mnt/var/log/hadoop/steps/s-1F27UY4FJWPCQ
+  EC2_AMITOOL_HOME=/opt/aws/amitools/ec2
+  SHLVL=5
+  HOME=/home/hadoop
+  HADOOP_IDENT_STRING=hadoop
+INFO redirectOutput to /mnt/var/log/hadoop/steps/s-1F27UY4FJWPCQ/stdout
+INFO redirectError to /mnt/var/log/hadoop/steps/s-1F27UY4FJWPCQ/stderr
+INFO Working dir /mnt/var/lib/hadoop/steps/s-1F27UY4FJWPCQ
+INFO ProcessRunner started child process 8142 :
+hadoop    8142  3311  0 01:16 ?        00:00:00 bash /usr/lib/hadoop/bin/hadoop jar /mnt/var/lib/hadoop/steps/s-1F27UY4FJWPCQ/wordcount-1.0.jar s3://neu.mr.hw1/input s3://neu.mr.hw1/output
+2017-01-28T01:16:57.138Z INFO HadoopJarStepRunner.Runner: startRun() called for s-1F27UY4FJWPCQ Child Pid: 8142
+INFO Synchronously wait child process to complete : hadoop jar /mnt/var/lib/hadoop/steps/s-1F27UY4F...
+INFO waitProcessCompletion ended with exit code 0 : hadoop jar /mnt/var/lib/hadoop/steps/s-1F27UY4F...
+INFO total process run time: 390 seconds
+2017-01-28T01:23:25.270Z INFO Step created jobs: job_1485566076966_0001
+2017-01-28T01:23:25.271Z INFO Step succeeded with exitCode 0 and took 390 seconds

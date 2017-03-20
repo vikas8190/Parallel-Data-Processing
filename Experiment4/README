@@ -1,0 +1,42 @@
+###################################
+CS 6240-02
+HW4
+Vikas Janardhanan
+####################################
+Important information
+
+The AWS execution was done on 5 and then 10 m4.large core servers.
+sbt was used for building jars
+
+####################################
+Deliverables:
+
+Report location:
+deliverables/Report/HW4_Report.pdf
+
+syslog(stderr) file from EMR:
+deliverables/EMR11Machines/stderr.txt
+deliverables/EMR6Machines/stderr.txt
+
+Final output:
+deliverables/EMR11Machines/part-00000
+deliverables/EMR6Machines/part-00000
+
+Code:
+PageRank/src/main/scala/PageRank.scala
+PageRank/src/main/java/WikiParser.java
+
+#####################################
+Run Instructions:
+1. cd PageRank
+2. Modify the initial parameter configurations in Makefile as required.
+3. Copy input .bz files to input directory.
+4. make clean
+5. make jar 
+7. make make-bucket
+8. make upload-input-aws
+9. make upload-app-aws
+10. To run standalone : make alone
+11. To run on cloud :make cloud
+
+#####################################

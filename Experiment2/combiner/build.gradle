@@ -1,0 +1,45 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '1.2.3'
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+mainClassName = "MeanTemperatureCombiner"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.apache.hadoop:hadoop-common:2.7.2"
+    compile "org.apache.hadoop:hadoop-client:2.7.2"
+    compile "org.apache.hadoop:hadoop-mapreduce-client-jobclient:2.7.2"
+    compile "org.apache.logging.log4j:log4j-api:2.7"
+    compile "org.apache.logging.log4j:log4j-core:2.7"
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir './'
+        }
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'MeanTemperatureCombiner'
+        )
+    }
+}
+
+task execute(type:JavaExec) {
+    main = "MeanTemperatureCombiner"
+    args "/Users/vikasjanardhanan/courses/mreduce/HomeWork2/1991.csv" , "/Users/vikasjanardhanan/courses/mreduce/HomeWork2/combiner/output"
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+group 'meantempcombiner'
+version '1.0'

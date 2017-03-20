@@ -1,0 +1,45 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '1.2.3'
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+mainClassName = "SecondarySort"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.apache.hadoop:hadoop-common:2.7.2"
+    compile "org.apache.hadoop:hadoop-client:2.7.2"
+    compile "org.apache.hadoop:hadoop-mapreduce-client-jobclient:2.7.2"
+    compile "org.apache.logging.log4j:log4j-api:2.7"
+    compile "org.apache.logging.log4j:log4j-core:2.7"
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir './'
+        }
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'SecondarySort'
+        )
+    }
+}
+
+task execute(type:JavaExec) {
+    main = "SecondarySort"
+    args "/Users/vikasjanardhanan/courses/mreduce/HomeWork2/secondarysort/1880.csv" , "/Users/vikasjanardhanan/courses/mreduce/HomeWork2/secondarysort/1881.csv" , "/Users/vikasjanardhanan/courses/mreduce/HomeWork2/secondarysort/1882.csv","/Users/vikasjanardhanan/courses/mreduce/HomeWork2/secondarysort/1883.csv","/Users/vikasjanardhanan/courses/mreduce/HomeWork2/secondarysort/1884.csv","/Users/vikasjanardhanan/courses/mreduce/HomeWork2/secondarysort/1885.csv","/Users/vikasjanardhanan/courses/mreduce/HomeWork2/secondarysort/1886.csv","/Users/vikasjanardhanan/courses/mreduce/HomeWork2/secondarysort/1887.csv","/Users/vikasjanardhanan/courses/mreduce/HomeWork2/secondarysort/1888.csv" , "/Users/vikasjanardhanan/courses/mreduce/HomeWork2/secondarysort/1889.csv" ,"/Users/vikasjanardhanan/courses/mreduce/HomeWork2/secondarysort/output"
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+group 'secondarysort'
+version '1.0'

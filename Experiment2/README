@@ -1,0 +1,62 @@
+###################################
+CS 6240-02
+HW2
+Vikas Janardhanan
+####################################
+Important information
+
+The AWS execution was done on two m4.large core servers.
+gradle was used for building jars
+
+####################################
+Deliverables:
+
+Report location:
+Report/HW2_Report.pdf
+
+nocombiner source code:
+nocombiner/MeanTemperatureNoCombiner.java
+
+combiner source code:
+combiner/MeanTemperatureCombiner.java
+
+inmappercombiner source code:
+inmapcombiner/MeanTemperatureInMapperCombiner.java
+
+secondarysort source code:
+secondarysort/SecondarySort.java
+
+syslog files:
+nocombiner/aws/*
+combiner/aws/*
+inmapcombiner/aws/*
+secondarysort/aws/*
+
+output files:
+nocombiner/output/*
+combiner/output/*
+inmapcombiner/output/*
+secondarysort/output/*
+
+#####################################
+Run Instructions:
+1. Modify the initial parameter configurations in Makefile as required.
+2. Run "make clean" to cleanup all the build files.
+3. Run "make jar" to compile and build the required jar files.
+4. Run "make clear-license" to remove license files from the jars
+5. cp all the input files to input directory.
+6. To run in standalone mode use one of below for each of the program:
+	make alone-nocombiner
+	make alone-combiner
+	make alone-inmapcombiner
+	make alone-secondarysort
+7. Run make upload-input-aws
+   Run make delete-output-aws
+   Run upload-app-aws
+8. To run in AWS EMR cluster use one of the below for each program:
+	make cloud-nocombiner
+	make cloud-combiner
+	make cloud-inmapcombiner
+	make cloud-secondarysort
+
+#####################################

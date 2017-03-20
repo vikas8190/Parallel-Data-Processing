@@ -1,0 +1,38 @@
+###################################
+CS 6240-02
+HW1
+Vikas Janardhanan
+####################################
+Important information
+
+The AWS execution was done on two m4.large core servers.
+
+####################################
+Deliverables:
+
+Report location:
+Report/HW1_Report.pdf
+
+Wordcount source code:
+wordcount/wordcount/*
+
+Wordcount controller and syslog:
+wordcount/aws_log/*
+
+Wordcount result file:
+wordcount/output/*
+
+Source code for Sequential and parallel version:
+Programs/*
+
+#####################################
+Run Instructions:
+1. Copy the input file 1912.csv to the current directory.
+2. Run "make all" to run PART B program without the fibonacci function delay. 
+3. Run "make all_fibo" to compile and run PART C program with fibonacci function delay.
+4. Run "make clean" to clear the generated class files and log files.
+5. Each parallel/sequential program generates its log file in the directory where it resides.
+
+#####################################
+NOTE:
+Please note Makefile is not integrated to with the wordcount program.
