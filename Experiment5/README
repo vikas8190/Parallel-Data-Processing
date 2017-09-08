@@ -1,0 +1,48 @@
+###################################
+CS 6240-02
+HW5
+Vikas Janardhanan
+####################################
+Important information
+
+The AWS execution was done on 5 and then 10 m4.large core servers.
+gradle was used for building jars
+
+####################################
+Deliverables:
+
+Report location:
+Deliverables/Report/HW3_Report.pdf
+
+syslog and stdout files from EMR:
+Deliverables/pagerankcolmatrix/11machines/syslog.txt
+Deliverables/pagerankcolmatrix/6machines/syslog.txt
+Deliverables/pagerankrowmatrix/11machines/syslog.txt
+Deliverables/pagerankrowmatrix/6machines/syslog.txt
+
+Final output:
+Deliverables/pagerankrowmatrix/6machines/part-r-00000
+Deliverables/pagerankrowmatrix/11machines/part-r-00000
+Deliverables/pagerankcolmatrix/6machines/part-r-00000
+Deliverables/pagerankcolmatrix/11machines/part-r-00000
+
+Code:
+PageRank/PageRankRowMatrix/*.java
+PageRank/PageRankColMatrix/*.java
+
+**Since only one reducer is responsible for creating the final output, output is generated in one file in EMR. Only that is included in the deliverable.
+#####################################
+Run Instructions:
+1. cd PageRank/PageRankRowMatrix or cd PageRank/PageRankColMatrix depending on which code you are running
+2. Modify the initial parameter configurations in Makefile as required.
+3. Copy input .bz files to input directory.
+4. make clean
+5. make jar 
+6. make clear-license
+7. make make-bucket
+8. make upload-input-aws
+9. make upload-app-aws
+10. To run standalone : make alone
+11. To run on cloud either :make cloud-6 or make-cloud-11
+
+#####################################

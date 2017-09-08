@@ -1,0 +1,45 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '1.2.3'
+}
+apply plugin: 'application'
+mainClassName = "PageRankRowMatrix"
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir './'
+        }
+    }
+}
+dependencies {
+    compile "org.apache.commons:commons-compress:1.6"
+    compile "org.apache.hadoop:hadoop-common:2.7.2"
+    compile "org.apache.hadoop:hadoop-client:2.7.2"
+    compile "org.apache.hadoop:hadoop-mapreduce-client-jobclient:2.7.2"
+    compile "org.apache.logging.log4j:log4j-api:2.7"
+    compile "org.apache.logging.log4j:log4j-core:2.7"
+    compile "org.jsoup:jsoup:1.7.2"
+}
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'PageRankRowMatrix'
+        )
+    }
+}
+
+task execute(type:JavaExec) {
+    main = "PageRankRowMatrix"
+    environment "HADOOP_HOME", "/Users/vikasjanardhanan/Softwares/hadoop-2.7.3/bin"
+    args "/Users/vikasjanardhanan/courses/mreduce/CS6240_Vikas_Janardhanan_HW_5/wikipedia-simple-html.bz2","/Users/vikasjanardhanan/courses/mreduce/HomeWork3/output"
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+group 'PageRankRowMatrix'
+version '1.0'
